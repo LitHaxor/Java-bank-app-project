@@ -147,7 +147,7 @@ public class Menu {
         double initDeposit = 0.0;
         boolean valid = false;
         while(!valid) {
-                System.out.print("Please enter account type?:");
+                System.out.print("Please enter account type?(checking/savings):");
                 typeOfAccount = inputKey.nextLine();
                 if (typeOfAccount.equalsIgnoreCase("savings") || typeOfAccount.equalsIgnoreCase("checking")) {
                     valid = true;
