@@ -6,10 +6,7 @@ public class Savings extends  Account{
 
         super();
         this.setBalance(initDeposit);
-        if(initDeposit >5000){
-            this.setInterest(3);
-        }
-        else this.setInterest(2);
+        this.checkInterest(0);
     }
 
     public String toString(){

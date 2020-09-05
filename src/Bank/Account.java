@@ -37,6 +37,7 @@ public class Account {
             System.err.println("Insufficient funds");
             return;
         }
+        checkInterest(0);
         balance -= amount +5;
         System.out.println(amount+" BDT successfully withdrawn!");
         System.out.println("New Balance:" + balance);
@@ -46,15 +47,17 @@ public class Account {
             System.err.println("Money cannot be negative value!");
             return;
         }
-        checkInterest();
-        balance += amount+ (amount * interest/100);
+        checkInterest(amount);
+        amount = amount+ (amount * interest/100);
+        balance += amount;
         System.out.println("Deposited: " + amount + " with interest of " + interest+"%");
         System.out.println("New balance: " + getBalance());
     }
 
-    private void checkInterest() {
-        if(balance >10000){
+    public void checkInterest(double amount) {
+        if(amount +balance >10000){
             interest = 5;
-        } else interest =2;
+        } else
+        {interest =2;}
     }
 }

@@ -5,10 +5,7 @@ public class Checking extends  Account{
         Checking(double initDeposit){
             super();
             this.setBalance(initDeposit);
-            if(initDeposit >10000){
-                this.setInterest(3);
-            }
-            else this.setInterest(2);
+            this.checkInterest(0);
         }
 
 
