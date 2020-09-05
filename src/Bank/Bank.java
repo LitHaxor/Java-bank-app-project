@@ -3,7 +3,7 @@ package Bank;
 
 import java.util.ArrayList;
 
-public class Bank {
+public class Bank  implements  Banking{
 
     ArrayList<Customer> customers = new ArrayList<Customer>();
     public void addCustomer(Customer customer) {
@@ -16,4 +16,6 @@ public class Bank {
     ArrayList<Customer> getCustomers(){
         return customers;
     }
+
+
 }

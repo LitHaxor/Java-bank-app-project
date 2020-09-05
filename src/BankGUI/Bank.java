@@ -4,7 +4,7 @@ package BankGUI;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Bank implements Serializable{
+public class Bank implements Serializable, Banking{
 
     ArrayList<Customer> customers = new ArrayList<Customer>();
     

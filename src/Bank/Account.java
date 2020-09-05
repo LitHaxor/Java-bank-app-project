@@ -1,6 +1,6 @@
 package Bank;
 
-public class Account {
+public abstract class Account implements  Accounting {
     private double balance;
     private  double interest;
     private int accountNumber;

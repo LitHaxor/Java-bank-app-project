@@ -1,12 +1,9 @@
 package BankGUI;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 
-
-
-public abstract class  Account implements Serializable  {
+public abstract class  Account implements Serializable , Accounting {
     private double balance;
     private  double interest;
     private int accountNumber;
