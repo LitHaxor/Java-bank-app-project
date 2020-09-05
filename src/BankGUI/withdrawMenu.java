@@ -83,18 +83,23 @@ public class withdrawMenu extends javax.swing.JDialog {
                 amount = Double.parseDouble(withdrawFields.getText());
                 
                     if(amount > customer.getAccount().getBalance()){
-                        warnings.append("Insufficant funds!");
+                        warnings.append("Insufficant funds!\n");
                     }
                 
                 else {
+              
                     int result = JOptionPane.showConfirmDialog(this, "Withdraw "+ amount + "BDT from this account?\n"
                     + "Charge: "+ String.format("%.2f",customer.getAccount().getInterest()/100 *amount)+ " BDT");
-                        if(result == JOptionPane.OK_OPTION){
+                    if(amount + (amount * customer.getAccount().getInterest())/100 > customer.getAccount().getBalance()){
+                       warnings.append("Cannot Pay Charge: "+ (amount * customer.getAccount().getInterest())/100 + " BDT\nReduce Amount and try again!" );
+                }
+                    else{
+                         if(result == JOptionPane.OK_OPTION){
                             customer.getAccount().withdraw(amount);
                             this.dispose();
                         }
-                }
-                
+                    }
+              }
             }
             catch(NumberFormatException ex){
                 warnings.append("withdraw amount is not number");

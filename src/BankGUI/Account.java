@@ -58,12 +58,13 @@ public abstract class  Account implements Serializable , Accounting {
         System.out.println("New balance: " + getBalance());
     }
 
+    @Override
     public void checkInterest(double amount) {
         if(amount + balance >10000){
-            interest = 5;
+            setInterest(5);
         } else
         {
-            interest =2;
+            setInterest(2);
         }
     }
     
